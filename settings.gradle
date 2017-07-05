@@ -1,0 +1,4 @@
+include 'sink',
+        'source'
+
+rootProject.name = 'stream-example-kinesis'
