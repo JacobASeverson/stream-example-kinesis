@@ -24,6 +24,5 @@ docs using Amazon Kinesis as the message broker.
     ```shell
     $ java -jar source/build/libs/source-0.0.1-SNAPSHOT.jar \
         --spring.cloud.stream.bindings.output.destination=mydest \
-        --spring.cloud.stream.kinesis.binder.autoCreateStreams=true \
         --cloud.aws.region.static=us-east-1
     ```
