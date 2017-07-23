@@ -14,15 +14,17 @@ docs using Amazon Kinesis as the message broker.
 2. Start the sink application:
 
     ```shell
-    $ java -jar sink/build/libs/sink-0.0.1-SNAPSHOT.jar \ 
+    $ java -jar sink/build/libs/sink-0.0.1-SNAPSHOT.jar \
         --spring.cloud.stream.bindings.input.destination=mydest \
         --server.port=8090 \
-        --cloud.aws.region.static=us-east-1
+        --cloud.aws.region.static=us-east-1 \
+        --spring.cloud.stream.kinesis.binder.autoCreateStreams=true
     ```
 3. Start the source application: 
 
     ```shell
     $ java -jar source/build/libs/source-0.0.1-SNAPSHOT.jar \
         --spring.cloud.stream.bindings.output.destination=mydest \
-        --cloud.aws.region.static=us-east-1
+        --cloud.aws.region.static=us-east-1 \
+        --spring.cloud.stream.kinesis.binder.autoCreateStreams=true
     ```
