@@ -18,7 +18,7 @@ docs using Amazon Kinesis as the message broker.
         --spring.cloud.stream.bindings.input.destination=mydest \
         --server.port=8090 \
         --cloud.aws.region.static=us-east-1 \
-        --spring.cloud.stream.kinesis.binder.autoCreateStreams=true \
+        --spring.cloud.stream.instanceCount=1 \
         --spring.cloud.stream.bindings.input.content-type=text/plain
     ```
 3. Start the source application: 
@@ -27,6 +27,5 @@ docs using Amazon Kinesis as the message broker.
     $ java -jar source/build/libs/source-0.0.1-SNAPSHOT.jar \
         --spring.cloud.stream.bindings.output.destination=mydest \
         --cloud.aws.region.static=us-east-1 \
-        --spring.cloud.stream.kinesis.binder.autoCreateStreams=true \
         --spring.cloud.stream.bindings.output.content-type=text/plain
     ```
